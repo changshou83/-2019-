@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js "></script>
+</head>
+
+<body>
+    <h1>测试页面，成功的话你会看见我</h1>
+    <form action="">
+        用户名：<input type="text" id="username" onblur="exist()"><span></span>
+        <button type="submit" id="sub" onclick="exist()">注册</button>
+    </form>
+    <script>
+        function exist() {
+            var username = $('#username').val();
+            $("#username").next().remove();
+            if (username == "" || username == null) {
+                $("#sub").attr("disabled", true);
+                return false;
+            }
+            $.post(url, {
+                "username": username
+            }, function(result) {
+                if (result == "ok") {
+                    $("#username").after($("<span style='color:red;'>账户已经存在!</span>"));
+                    $("#sub").attr("disabled", true);
+                } else {
+                    $("#username").after($("<span style='color:red;'>账户可以使用!</span>"));
+                    $("#sub").attr("disabled", false);
+                }
+            })
+        }
+        // // 按钮操作
+        // function enableSubmit(bool) {
+        //     if (bool) $(".btn-default").removeAttr("disabled");
+        //     else $(".btn-default").attr("disabled", "disabled");
+        // }
+
+        // function v_submitButton() {
+        //     if ($('.username').val() == '' || $('.student_number').val() == '' || $('.tel').val() == '') {
+        //         enableSubmit(false);
+        //         return;
+        //     }
+        //     for (var f in flags)
+        //         if (!flags[f]) {
+        //             enableSubmit(false);
+        //             return;
+        //         }
+        //     enableSubmit(true);
+        // }
+        // //手机号，学号验证
+        // var RegNumber = /^[0-9]{10,11}$/;
+        // var flags = [false, false, false];
+
+        // function formatCheck(name, state, msg) {
+        //     if (state == "none") {
+        //         $(name).attr("class", "none");
+        //         return;
+        //     }
+        //     if (state == "correct") {
+        //         $(name).attr("class", "correct");
+        //         return;
+        //     }
+        //     $(name).text(msg);
+        //     $(name).attr("class", "error");
+        // }
+
+        // function v_student_number() {
+        //     var student_number = $("#student_number").val();
+        //     if (!RegNumber.test(student_number)) {
+        //         formatCheck("student_number", "error", "学号格式不正确");
+        //         flags[1] = false;
+        //         enableSubmit(false);
+        //     } else {
+        //         formatCheck("student_number", "correct", "");
+        //         flags[1] = true;
+        //     }
+        //     v_submitButton();
+        // }
+
+        // function v_username() {
+        //     var username = $("#username").val();
+        //     if (username.length == 0) {
+        //         formatCheck("username", "error", "不得为空");
+        //         flags[1] = false;
+        //     } else {
+        //         if (name.length > 32) {
+        //             formatCheck("username", "error", "必须少于32个字符");
+        //             flags[0] = false;
+        //         } else {
+        //             formatCheck("username", "correct", "");
+        //             flags[0] = true;
+        //         }
+        //     }
+        //     v_submitButton();
+        // }
+        // function enableSubmit(bool) {
+        //     if (bool) $(".btn-default").removeAttr("disabled");
+        //     else $(".btn-default").attr("disabled", "disabled");
+        //     console.log(1);
+        // }
+
+        // function v_submitButton() {
+        //     if ($("#username").val() == '' || $("#student_number").val() == '' || $("#tel").val() == '') {
+        //         enableSubmit(false);
+        //         return;
+        //     }
+        //     for (var k in flags)
+        //         if (!flags[k]) {
+        //             enableSubmit(false);
+        //             return;
+        //         }
+        //     enableSubmit(true);
+        //     enableSubmit(true);
+        // }
+        // //手机号，学号验证
+        // var RegNumber = /^[0-9]{10,11}$/g;
+        // var flags = [false, false];
+
+        // function formatCheck(name, state, info) {
+        //     if (state == "none") {
+        //         return;
+        //     }
+        //     if (state == "correct") {
+        //         $(name).attr("class", "correct");
+        //         return;
+        //     }
+        //     $("#" + name + " .input span").text(info);
+        //     $("#" + name + " .input span").attr("class", "error");
+        // }
+
+        // $("#student_number").onblur = function student_NumberCheck() {
+        //     var student_Number = $("#student_number").val();
+        //     if (!RegNumber.test(student_Number)) {
+        //         formatCheck("student_number", "error", "学号格式不正确");
+        //         flags[0] = false;
+        //         enableSubmit(false);
+        //     } else {
+        //         formatCheck("student_number", "correct", "");
+        //         flags[0] = true;
+        //     }
+        //     v_submitButton();
+        // }
+
+        // $("#tel").onblur = function telCheck() {
+        //     var student_Number = $("#tel").val();
+        //     if (!RegNumber.test(tel)) {
+        //         formatCheck("tel", "error", "学号格式不正确");
+        //         flags[1] = false;
+        //         enableSubmit(false);
+        //     } else {
+        //         formatCheck("tel", "correct", "");
+        //         flags[1] = true;
+        //     }
+        //     v_submitButton();
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(../img/bg.png);
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.container-fluid {
+    width: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navbar {
+    min-height: 0px;
+    margin-bottom: 0px;
+}
+
+.container-fluid .navbar-header {
+    width: 16vw;
+}
+
+.container-fluid .navbar-header img {
+    height: 2vw;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.container-fluid .navbar-header p {
+    font-family: STXihei;
+    font-size: 1.1vw;
+    display: inline-block;
+    position: relative;
+    margin-top: 0.9vw;
+    margin-left: 0.4vw;
+}
+
+.collapse .nav {
+    font-size: 1.05vw;
+    position: relative;
+    margin-top: 1px;
+    margin-left: 6vw;
+}
+
+.navbar-collapse img {
+    height: 2.39vw;
+    float: right;
+    position: relative;
+}
+
+.navbar-collapse .navbar-nav>li>a {
+    color: white;
+    padding: 0.93vw 2vw;
+}
+
+.navbar-collapse .navbar-right>li>a {
+    padding-top: 0.5vw;
+}
+
+.Large-yellow-rectangle {
+    z-index: 1;
+    position: absolute;
+    border: #fdd000 solid 0.5vw;
+    padding: 19.7vw 14vw;
+    left: 34.3vw;
+    margin-top: 5vw;
+    margin-bottom: 1vw;
+}
+
+.Little-yellow-rectangle {
+    z-index: 1;
+    position: absolute;
+    border: #fdd000 solid 1.5vw;
+    padding: 16vw 10.15vw;
+    left: 2vw;
+    top: 2.5vw;
+}
+
+.main {
+    margin: 0 auto;
+}
+
+.main .text {
+    z-index: 3;
+    color: white;
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 28.6%;
+}
+
+.main .text .p1 {
+    position: absolute;
+    margin-left: 13.2vw;
+    font-size: 2.25vw;
+    margin-bottom: -6%;
+}
+
+.main .text .p2 {
+    margin-top: 2vw;
+    font-size: 6.9vw;
+}
+
+.btn {
+    z-index: 3;
+    position: absolute;
+    margin-top: 16.5vw;
+    margin-left: 19.8vw;
+    color: black;
+}
+
+.btn-groups {
+    font-size: 2vw;
+    font-weight: bold;
+    padding: 2vw 3vw;
+    border: 0;
+}
+
+.btn-groups p {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 0.9vw;
+    margin-right: 0.9vw;
+}
+
+#user {
+    background-image: linear-gradient(90deg, #e48cbc, #cfcfcf);
+    margin-left: 9.5vw;
+}
+
+#admin {
+    background-image: linear-gradient(90deg, #cfcfcf, #32e0ae);
+    margin-left: 28vw;
+}
+
+.modal input {
+    background-color: #b3b5b6;
+}
+
+.modal button {
+    background-color: #855e5f;
+    color: white;
+    position: relative;
+    margin: 0;
+}
+
+.modal-content {
+    background-color: #9b9f9f;
+    position: relative;
+}
+
+.modal-content-user,
+.modal-content-admin {
+    top: 15.6vw;
+}
+
+.modal-content-user .form-group button,
+.modal-content-admin .form-group button {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.modal-content-admin .form-group button {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.modal-content-enroll .form-group button {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.modal-content-enroll {
+    top: 1.3vw;
+}
+
+.form-group input {
+    text-align: center;
+}
+
+.form-group input::-webkit-input-placeholder {
+    text-align: center;
+    font-size: 1.3vw;
+}
+
+.form-group button {
+    font-size: 1.3vw;
+    padding: 0.7vw 4.5vw;
+    border: 0.2vw solid #9b9f9f;
+    border-radius: 0.5vw;
+    text-align: center;
+}
+
+.form-group button:hover {
+    border: 0.2vw solid #6a7272;
+    background-color: #855e5f;
+    color: black;
+}
+
+.form-group .common::-webkit-input-placeholder {
+    color: white;
+}
+
+.control-label {
+    text-align: right;
+}
+
+.btn-default-admin-login {
+    position: relative;
+}
+
+#login input {
+    margin-bottom: 1vw;
+}
+
+.none {
+    display: none;
+}
+
+textarea {
+    resize: none;
+}
