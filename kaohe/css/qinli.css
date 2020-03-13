@@ -20,74 +20,59 @@ body {
 }
 
 .container-fluid {
+    border: 0;
     width: 100%;
     color: white;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.navbar {
-    min-height: 0px;
-    margin-bottom: 0px;
-}
-
-.container-fluid .navbar-header {
-    width: 16vw;
-}
-
-.container-fluid .navbar-header img {
-    height: 2vw;
+.qinLiIcon {
+    float: left;
+    width: 11vw;
     position: relative;
-    margin-bottom: 0;
+    left: -30px;
 }
 
-.container-fluid .navbar-header p {
-    font-family: STXihei;
-    font-size: 1.1vw;
-    display: inline-block;
+.heads {
+    margin-top: 5px;
+    width: 2.7vw;
+}
+
+.dropdown-admin-menu {
+    font-size: 12px;
+}
+
+.open>.dropdown-menu {
+    width: 3vw;
+}
+
+.navbar-collapse>.menu {
     position: relative;
-    margin-top: 0.9vw;
-    margin-left: 0.4vw;
+    left: 12vw;
 }
 
-.collapse .nav {
-    font-size: 1.05vw;
-    position: relative;
-    margin-top: 1px;
-    margin-left: 6vw;
-}
-
-.navbar-collapse img {
-    height: 2.39vw;
-    float: right;
-    position: relative;
-}
-
-.navbar-collapse .navbar-nav>li>a {
-    color: white;
-    padding: 0.93vw 2vw;
-}
-
-.navbar-collapse .navbar-right>li>a {
-    padding-top: 0.5vw;
+.navbar-inverse .navbar-nav>li>a {
+    padding: 15px 30px;
+    color: #fff;
 }
 
 .Large-yellow-rectangle {
     z-index: 1;
     position: absolute;
-    border: #fdd000 solid 0.5vw;
-    padding: 19.7vw 14vw;
+    border: #fdd000 solid 0.28vw;
+    padding: 18.2vw 13vw;
     left: 34.3vw;
-    margin-top: 5vw;
+    margin-top: 2.2vw;
     margin-bottom: 1vw;
 }
 
 .Little-yellow-rectangle {
     z-index: 1;
     position: absolute;
-    border: #fdd000 solid 1.5vw;
-    padding: 16vw 10.15vw;
-    left: 2vw;
-    top: 2.5vw;
+    border: #fdd000 solid 1.3vw;
+    padding: 14.9vw 9.5vw;
+    left: 2.2vw;
+    top: 2vw;
 }
 
 .main {
@@ -98,34 +83,34 @@ body {
     z-index: 3;
     color: white;
     position: absolute;
-    margin-top: 10%;
-    margin-left: 28.6%;
+    margin-top: 6%;
+    margin-left: 29.6%;
 }
 
 .main .text .p1 {
     position: absolute;
-    margin-left: 13.2vw;
-    font-size: 2.25vw;
-    margin-bottom: -6%;
+    margin-left: 12.7vw;
+    font-size: 1.85vw;
+    margin-top: 0.5vw;
 }
 
 .main .text .p2 {
-    margin-top: 2vw;
-    font-size: 6.9vw;
+    margin-top: 1.7vw;
+    font-size: 5.9vw;
 }
 
 .btn {
     z-index: 3;
     position: absolute;
-    margin-top: 16.5vw;
-    margin-left: 19.8vw;
+    margin-top: 14vw;
+    margin-left: 20.8vw;
     color: black;
 }
 
 .btn-groups {
-    font-size: 2vw;
+    font-size: 1.8vw;
     font-weight: bold;
-    padding: 2vw 3vw;
+    padding: 1.8vw 2.5vw;
     border: 0;
 }
 
@@ -143,7 +128,7 @@ body {
 
 #admin {
     background-image: linear-gradient(90deg, #cfcfcf, #32e0ae);
-    margin-left: 28vw;
+    margin-left: 26vw;
 }
 
 .modal input {
@@ -164,7 +149,7 @@ body {
 
 .modal-content-user,
 .modal-content-admin {
-    top: 15.6vw;
+    top: 14vw;
 }
 
 .modal-content-user .form-group button,
@@ -185,7 +170,7 @@ body {
 }
 
 .modal-content-enroll {
-    top: 1.3vw;
+    top: 0.1vw;
 }
 
 .form-group input {
@@ -194,7 +179,6 @@ body {
 
 .form-group input::-webkit-input-placeholder {
     text-align: center;
-    font-size: 1.3vw;
 }
 
 .form-group button {

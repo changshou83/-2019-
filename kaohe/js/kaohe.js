@@ -92,7 +92,7 @@ $(".btn-default-admin-login").on("click", function() {
     }
     $.ajax({
         type: 'post',
-        url: '',
+        url: 'adminLoginServlet',
         data: {
             "username": $("#inputTel").val(),
             "pwd": $("#inputPassword").val()
@@ -106,7 +106,8 @@ $(".btn-default-admin-login").on("click", function() {
         error: function() {
             Location.href = '../html/';
             alert('手机号或密码错误');
-        }
+        },
+        dataType: 'json'
     });
     //阻止表单的默认提交行为
     return false;
@@ -131,7 +132,7 @@ $(".btn-default-user-login").on("click", function() {
     }
     $.ajax({
         type: 'post',
-        url: '',
+        url: 'LoginServlet',
         data: {
             "username": $("#user-tel").val(),
             "pwd": $("#userPassword").val(),
@@ -139,14 +140,15 @@ $(".btn-default-user-login").on("click", function() {
         },
         success: function(response) {
             if (response) { //登录成功跳到个人界面
-                Location.href = '../html/';
+                Location.href = '../html/管理员-查看简历.html';
             } else {
                 alert('手机号或验证码错误');
             }
         },
         error: function() {
             alert('错误');
-        }
+        },
+        dataType: 'json'
     });
     //阻止表单的默认提交行为
     return false;
@@ -156,23 +158,6 @@ $("#checkCode").on('click', function() {
     var data = +new Data();
     $(this).attr('src', 'CheckCodeServlet' + data);
 });
-//退出登录
-$('logout').on('click', function() {
-    var isConfirm = confirm('您真的要退出吗?');
-    if (isConfirm) {
-        $.ajax({
-            type: 'post',
-            url: '',
-            success: function() {
-                //退出成功，返回登陆界面
-                location.href = '../html/qinli.html';
-            },
-            error: function() {
-                alert('退出失败');
-            }
-        })
-    }
-});
 //用户注册
 $('.form-horizontal-enroll').on('submit', function() {
     //获取到用户在表单中输入的数据并将内容格式化成参数字符串
@@ -180,7 +165,7 @@ $('.form-horizontal-enroll').on('submit', function() {
     //向服务器端发送添加用户的请求
     $.ajax({
         type: 'post',
-        url: '',
+        url: 'RegisterServlet',
         data: formData,
         success: function(response) {
             if (response) {
@@ -190,7 +175,8 @@ $('.form-horizontal-enroll').on('submit', function() {
         },
         error: function() {
             alert('注册失败');
-        }
+        },
+        dataType: 'json'
     });
     //阻止表单的默认提交行为
     return false;
@@ -270,18 +256,16 @@ $('#tel').on('blur', function() {
         },
         success: function(response) {
             if (!response.isExistUser) {
-                alert("手机号可注册");
                 $(".tel_registered").css('display', 'none')
                 $(".btn-default").attr('disabled', false);
                 document.enroll.action = "LoginServlet";
             } else {
-                alert("手机号已注册");
                 $(".tel_registered").css('display', 'block')
                 $(".btn-default").attr('disabled', true);
             }
         },
         error: function() {
-            alert("这里走了error函数");
+
             $(".tel_registered").css('display', 'block')
             $(".btn-default").attr('disabled', true);
         },

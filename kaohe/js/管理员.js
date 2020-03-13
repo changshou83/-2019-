@@ -1,218 +1,233 @@
-var testCode = {
-    "userData": [{
-            "no": 0, //后端用于索引的编号，无需操作
-            "id": 1, //学号
-            "tel": 1, //电话号码
-            "qq": 1, //QQ号码
-            "department": 1, //应聘部门
-            "position": 1, //应聘职位
-            "hobby": 1, //爱好
-            "rewards": 1, //曾获奖励
-            "selfeva": '的本地存储 API 中的 localStorage 与sessionStorage 在使用方法上是相同的， 区别在于 sessionStorage 在关闭页面后即被清空， 而localStorage 则会一直保存。 我们这里以 localStorage为例， 简要介绍下 Html5 的本地存储， 并针对如遍历等常见问题作一些示例说明。localStorage 是 HTML5 本地存储的 API， 使用键值对的方式进行存取数据， 存取的数据只能是字符串。 不同浏览器对该API 支持情况有所差异， 如使用方法、 最大存储空间等。 ', //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 1, //后端用于索引的编号，无需操作
-            "id": 2, //学号
-            "tel": 2, //电话号码
-            "qq": 2, //QQ号码
-            "department": 2, //应聘部门
-            "position": 2, //应聘职位
-            "hobby": 2, //爱好
-            "rewards": 2, //曾获奖励
-            "selfeva": 2, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 2, //后端用于索引的编号，无需操作
-            "id": 3, //学号
-            "tel": 3, //电话号码
-            "qq": 3, //QQ号码
-            "department": 3, //应聘部门
-            "position": 3, //应聘职位
-            "hobby": 3, //爱好
-            "rewards": 3, //曾获奖励
-            "selfeva": 3, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 3, //后端用于索引的编号，无需操作
-            "id": 4, //学号
-            "tel": 4, //电话号码
-            "qq": 4, //QQ号码
-            "department": 4, //应聘部门
-            "position": 4, //应聘职位
-            "hobby": 4, //爱好
-            "rewards": 4, //曾获奖励
-            "selfeva": 4, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 4, //后端用于索引的编号，无需操作
-            "id": 5, //学号
-            "tel": 5, //电话号码
-            "qq": 5, //QQ号码
-            "department": 5, //应聘部门
-            "position": 5, //应聘职位
-            "hobby": 5, //爱好
-            "rewards": 5, //曾获奖励
-            "selfeva": 5, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 5, //后端用于索引的编号，无需操作
-            "id": 6, //学号
-            "tel": 6, //电话号码
-            "qq": 6, //QQ号码
-            "department": 6, //应聘部门
-            "position": 6, //应聘职位
-            "hobby": 6, //爱好
-            "rewards": 6, //曾获奖励
-            "selfeva": 6, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 6, //后端用于索引的编号，无需操作
-            "id": 7, //学号
-            "tel": 7, //电话号码
-            "qq": 7, //QQ号码
-            "department": 7, //应聘部门
-            "position": 7, //应聘职位
-            "hobby": 7, //爱好
-            "rewards": 7, //曾获奖励
-            "selfeva": 7, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 7, //后端用于索引的编号，无需操作
-            "id": 8, //学号
-            "tel": 8, //电话号码
-            "qq": 8, //QQ号码
-            "department": 8, //应聘部门
-            "position": 8, //应聘职位
-            "hobby": 8, //爱好
-            "rewards": 8, //曾获奖励
-            "selfeva": 8, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 8, //后端用于索引的编号，无需操作
-            "id": 9, //学号
-            "tel": 9, //电话号码
-            "qq": 9, //QQ号码
-            "department": 9, //应聘部门
-            "position": 9, //应聘职位
-            "hobby": 9, //爱好
-            "rewards": 9, //曾获奖励
-            "selfeva": 9, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 9, //后端用于索引的编号，无需操作
-            "id": 10, //学号
-            "tel": 10, //电话号码
-            "qq": 10, //QQ号码
-            "department": 10, //应聘部门
-            "position": 10, //应聘职位
-            "hobby": 10, //爱好
-            "rewards": 10, //曾获奖励
-            "selfeva": 10, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 10, //后端用于索引的编号，无需操作
-            "id": 11, //学号
-            "tel": 11, //电话号码
-            "qq": 11, //QQ号码
-            "department": 11, //应聘部门
-            "position": 11, //应聘职位
-            "hobby": 11, //爱好
-            "rewards": 11, //曾获奖励
-            "selfeva": 11, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 11, //后端用于索引的编号，无需操作
-            "id": 12, //学号
-            "tel": 12, //电话号码
-            "qq": 12, //QQ号码
-            "department": 12, //应聘部门
-            "position": 12, //应聘职位
-            "hobby": 12, //爱好
-            "rewards": 12, //曾获奖励
-            "selfeva": 12, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 12, //后端用于索引的编号，无需操作
-            "id": 13, //学号
-            "tel": 13, //电话号码
-            "qq": 13, //QQ号码
-            "department": 13, //应聘部门
-            "position": 13, //应聘职位
-            "hobby": 13, //爱好
-            "rewards": 13, //曾获奖励
-            "selfeva": 13, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 13, //后端用于索引的编号，无需操作
-            "id": 14, //学号
-            "tel": 14, //电话号码
-            "qq": 14, //QQ号码
-            "department": 14, //应聘部门
-            "position": 14, //应聘职位
-            "hobby": 14, //爱好
-            "rewards": 14, //曾获奖励
-            "selfeva": 14, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 14, //后端用于索引的编号，无需操作
-            "id": 15, //学号
-            "tel": 15, //电话号码
-            "qq": 15, //QQ号码
-            "department": 15, //应聘部门
-            "position": 15, //应聘职位
-            "hobby": 15, //爱好
-            "rewards": 15, //曾获奖励
-            "selfeva": 15, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        },
-        {
-            "no": 15, //后端用于索引的编号，无需操作
-            "id": 16, //学号
-            "tel": 16, //电话号码
-            "qq": 16, //QQ号码
-            "department": 16, //应聘部门
-            "position": 16, //应聘职位
-            "hobby": 16, //爱好
-            "rewards": 16, //曾获奖励
-            "selfeva": 16, //自我评价
-            "photo": '../img/id_photo.png' //照片的流式数据
-        }
-    ]
-};
-var userForm;
+var testCode;
+//这是我测试的时候用的
+//= {
+//     "userData": [{
+//             "no": 0, //后端用于索引的编号，无需操作
+//             "id": 1, //学号
+//             "tel": 1, //电话号码
+//             "qq": 1, //QQ号码
+//             "department": 1, //应聘部门
+//             "position": 1, //应聘职位
+//             "hobby": 1, //爱好
+//             "rewards": 1, //曾获奖励
+//             "selfeva": '的本地存储 API 中的 localStorage 与sessionStorage 在使用方法上是相同的， 区别在于 sessionStorage 在关闭页面后即被清空， 而localStorage 则会一直保存。 我们这里以 localStorage为例， 简要介绍下 Html5 的本地存储， 并针对如遍历等常见问题作一些示例说明。localStorage 是 HTML5 本地存储的 API， 使用键值对的方式进行存取数据， 存取的数据只能是字符串。 不同浏览器对该API 支持情况有所差异， 如使用方法、 最大存储空间等。 ', //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 1, //后端用于索引的编号，无需操作
+//             "id": 2, //学号
+//             "tel": 2, //电话号码
+//             "qq": 2, //QQ号码
+//             "department": 2, //应聘部门
+//             "position": 2, //应聘职位
+//             "hobby": 2, //爱好
+//             "rewards": 2, //曾获奖励
+//             "selfeva": 2, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 2, //后端用于索引的编号，无需操作
+//             "id": 3, //学号
+//             "tel": 3, //电话号码
+//             "qq": 3, //QQ号码
+//             "department": 3, //应聘部门
+//             "position": 3, //应聘职位
+//             "hobby": 3, //爱好
+//             "rewards": 3, //曾获奖励
+//             "selfeva": 3, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 3, //后端用于索引的编号，无需操作
+//             "id": 4, //学号
+//             "tel": 4, //电话号码
+//             "qq": 4, //QQ号码
+//             "department": 4, //应聘部门
+//             "position": 4, //应聘职位
+//             "hobby": 4, //爱好
+//             "rewards": 4, //曾获奖励
+//             "selfeva": 4, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 4, //后端用于索引的编号，无需操作
+//             "id": 5, //学号
+//             "tel": 5, //电话号码
+//             "qq": 5, //QQ号码
+//             "department": 5, //应聘部门
+//             "position": 5, //应聘职位
+//             "hobby": 5, //爱好
+//             "rewards": 5, //曾获奖励
+//             "selfeva": 5, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 5, //后端用于索引的编号，无需操作
+//             "id": 6, //学号
+//             "tel": 6, //电话号码
+//             "qq": 6, //QQ号码
+//             "department": 6, //应聘部门
+//             "position": 6, //应聘职位
+//             "hobby": 6, //爱好
+//             "rewards": 6, //曾获奖励
+//             "selfeva": 6, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 6, //后端用于索引的编号，无需操作
+//             "id": 7, //学号
+//             "tel": 7, //电话号码
+//             "qq": 7, //QQ号码
+//             "department": 7, //应聘部门
+//             "position": 7, //应聘职位
+//             "hobby": 7, //爱好
+//             "rewards": 7, //曾获奖励
+//             "selfeva": 7, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 7, //后端用于索引的编号，无需操作
+//             "id": 8, //学号
+//             "tel": 8, //电话号码
+//             "qq": 8, //QQ号码
+//             "department": 8, //应聘部门
+//             "position": 8, //应聘职位
+//             "hobby": 8, //爱好
+//             "rewards": 8, //曾获奖励
+//             "selfeva": 8, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 8, //后端用于索引的编号，无需操作
+//             "id": 9, //学号
+//             "tel": 9, //电话号码
+//             "qq": 9, //QQ号码
+//             "department": 9, //应聘部门
+//             "position": 9, //应聘职位
+//             "hobby": 9, //爱好
+//             "rewards": 9, //曾获奖励
+//             "selfeva": 9, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 9, //后端用于索引的编号，无需操作
+//             "id": 10, //学号
+//             "tel": 10, //电话号码
+//             "qq": 10, //QQ号码
+//             "department": 10, //应聘部门
+//             "position": 10, //应聘职位
+//             "hobby": 10, //爱好
+//             "rewards": 10, //曾获奖励
+//             "selfeva": 10, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 10, //后端用于索引的编号，无需操作
+//             "id": 11, //学号
+//             "tel": 11, //电话号码
+//             "qq": 11, //QQ号码
+//             "department": 11, //应聘部门
+//             "position": 11, //应聘职位
+//             "hobby": 11, //爱好
+//             "rewards": 11, //曾获奖励
+//             "selfeva": 11, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 11, //后端用于索引的编号，无需操作
+//             "id": 12, //学号
+//             "tel": 12, //电话号码
+//             "qq": 12, //QQ号码
+//             "department": 12, //应聘部门
+//             "position": 12, //应聘职位
+//             "hobby": 12, //爱好
+//             "rewards": 12, //曾获奖励
+//             "selfeva": 12, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 12, //后端用于索引的编号，无需操作
+//             "id": 13, //学号
+//             "tel": 13, //电话号码
+//             "qq": 13, //QQ号码
+//             "department": 13, //应聘部门
+//             "position": 13, //应聘职位
+//             "hobby": 13, //爱好
+//             "rewards": 13, //曾获奖励
+//             "selfeva": 13, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 13, //后端用于索引的编号，无需操作
+//             "id": 14, //学号
+//             "tel": 14, //电话号码
+//             "qq": 14, //QQ号码
+//             "department": 14, //应聘部门
+//             "position": 14, //应聘职位
+//             "hobby": 14, //爱好
+//             "rewards": 14, //曾获奖励
+//             "selfeva": 14, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 14, //后端用于索引的编号，无需操作
+//             "id": 15, //学号
+//             "tel": 15, //电话号码
+//             "qq": 15, //QQ号码
+//             "department": 15, //应聘部门
+//             "position": 15, //应聘职位
+//             "hobby": 15, //爱好
+//             "rewards": 15, //曾获奖励
+//             "selfeva": 15, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         },
+//         {
+//             "no": 15, //后端用于索引的编号，无需操作
+//             "id": 16, //学号
+//             "tel": 16, //电话号码
+//             "qq": 16, //QQ号码
+//             "department": 16, //应聘部门
+//             "position": 16, //应聘职位
+//             "hobby": 16, //爱好
+//             "rewards": 16, //曾获奖励
+//             "selfeva": 16, //自我评价
+//             "photo": '../img/id_photo.png' //照片的流式数据
+//         }
+//     ]
+// };
+//从session里获取user(用户信息)
+var userForm = sessionStorage.getItem('user');
 //向后端请求数据
-// $($.ajax({
-//     type: 'post',
-//     url: 'adminResumeQueryServlet',
-//     success: function(response) {
-//         userForm = response.user;
-//         testCode = response.resumes;
-//     },
-//     dataType: 'json'
-// }));
+$($.ajax({
+    type: 'post',
+    url: 'adminResumeQueryServlet',
+    success: function(response) {
+        testCode = response.testCode;
+    },
+    dataType: 'json'
+}));
 //渲染用户数据
-$('.heads').attr('src', userForm);
+$('.heads').attr('src', userForm.heads);
+//ajax获取证件照
+var imgSrc = [];
+for (let i = 0; i < data.userData.length; i++) {
+    $.ajax({
+        type: 'post',
+        url: 'PhotoServlet',
+        data: { "no": data.userData[i].no },
+        success: function(response) {
+            imgSrc.push(response);
+        }
+    })
+};
 //制造简历
 var showResume = document.querySelector('.showResume');
 
 function createTable(data) {
     //根据后端传过来的简历份数动态制造test块
-    for (let i = 0; i < data.userData[data.userData.length - 1].no + 1; i++) {
-        var user = document.createElement('div');
+    for (let i = 0; i < data.userData.length; i++) {
+        var user = document.createElement('form');
+        user.method = 'post'
         user.className = 'test';
         showResume.appendChild(user);
         var table = document.createElement('table');
@@ -223,7 +238,6 @@ function createTable(data) {
         var showData = [];
         showData.push(data.userData[i].id);
         showData.push(data.userData[i].qq);
-        showData.push(data.userData[i].photo);
         showData.push(data.userData[i].department);
         //制造行与列并填入数据
         for (let j = 0; j < 2; j++) {
@@ -243,20 +257,23 @@ function createTable(data) {
         var imgTr = document.createElement('tr');
         var imgTd = document.createElement('td');
         var id_photo = document.createElement('img');
-        id_photo.src = showData[2];
+        //如果没有传过来，就显示默认图片
+        if (imgSrc[i]) id_photo.src = '../img/id_photo.png';
+        else id_photo.src = imgSrc[i];
         imgTr.appendChild(imgTd);
         imgTd.appendChild(id_photo);
         tbody.appendChild(imgTr);
         var tr = document.createElement('tr');
         table.appendChild(tr);
         var td = document.createElement('td');
-        td.innerHTML = showData[3];
+        td.innerHTML = showData[2];
         tr.appendChild(td);
+        tbody.appendChild(tr);
     }
 };
 createTable(testCode);
 //简历的总数
-var total = testCode.userData[testCode.userData.length - 1].no + 1;
+var total = testCode.userData.length;
 //简历的总页数
 var pageNum = 0;
 //每页的简历数
@@ -281,13 +298,13 @@ function Pagination() {
             //去除之前的类名
             $(testList).each(function() { $(this).removeClass('' + "page" + i + '') });
             //如果最后一页少于八个的话，就让其添加指定数量的类名，避免报错找不到元素
-            if (testCode.userData[(i - 1) * limit].no == (pageNum - 1) * limit) showTests = surplus;
+            if ($(testList[(i - 1) * limit]).data('index') == (pageNum - 1) * limit) showTests = surplus;
             else showTests = limit;
             if (showTests == 0) showTests = limit;
             //添加新的page类名
             for (let j = showTests; j > 0; j--) testList[(i - 1) * limit + j - 1].className += ' page' + i;
         } else {
-            if (testCode.userData[(i - 1) * limit].no == (pageNum - 1) * limit) showTests = surplus;
+            if ($(testList[(i - 1) * limit]).data('index') == (pageNum - 1) * limit) showTests = surplus;
             else showTests = limit;
             if (showTests == 0) showTests = limit;
             for (let j = showTests; j > 0; j--) testList[(i - 1) * limit + j - 1].className += ' page' + i;
@@ -364,15 +381,6 @@ $('.back').on('click', function() {
 $(".totalPage").text(pageNum);
 //点击简历显示出具体信息
 $(".test").on("click", changeModalContent);
-//初始化模态框(根本没走此函数，我直接改变的内容不是添加，所以不需要初始化)
-// function init() {
-//     for (var k in testCode.userData[0]) {
-//         //no为后端操作序号，前端不存在此id，不排除会报错
-//         if (k == 'no') continue;
-//         else if (k == 'photo') document.getElementById('modal-img').src = '';
-//         else document.getElementById("" + k + "").innerText = '';
-//     }
-// };
 //记录被点击的resume
 var clicked = 0;
 //改变模态框内容
@@ -380,14 +388,16 @@ function changeModalContent() {
     //这是指明哪个resume块被点击
     var index = $(this).data('index');
     clicked = index;
-    //init();
     //循环对象将数据填入
     for (var k in testCode.userData[index]) {
         //将no排除，因为要显示的数据里并没有它，不排除掉会报错找不到
         if (k == 'no') continue;
         //图片特殊所以需要单独拿出来操作
-        else if (k == 'photo') $('#modal-img').attr('src', '' + testCode.userData[index][k] + '');
-        else document.getElementById("" + k + "").innerText = testCode.userData[index][k];
+        else if (k == 'photo') {
+            //如果没有传过来，就显示默认图片
+            if (imgSrc[i]) $("#modal-img").attr('src', '../img/id_photo.png');
+            else $("#modal-img").attr('src', imgSrc[index]);
+        } else document.getElementById("" + k + "").innerText = testCode.userData[index][k];
     };
     //检测类名决定改变红心与否
     var likePicture = document.querySelector('.like svg');
@@ -460,6 +470,23 @@ $(".delete").on('click', function() {
 });
 //导出操作
 $(".export").on('click', function() {});
+//退出登录
+$('#logout').on('click', function() {
+    var isConfirm = confirm('您真的要退出吗?');
+    if (isConfirm) {
+        $.ajax({
+            type: 'post',
+            url: 'LogoutServlet',
+            success: function(response) {
+                //退出成功，返回登陆界面
+                location.href = '../html/qinli.html';
+            },
+            error: function() {
+                alert('退出失败');
+            }
+        })
+    }
+});
 /* 遇见的难题及解决方法
 问题1. 怎样让一个空的模态框(只是数据是空的，大框已经写好了)去显示我想要显示的那个简历的内容呢？此函数为changeModalContent
 解决办法：
