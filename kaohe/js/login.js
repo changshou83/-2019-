@@ -1,15 +1,20 @@
+//检查session中是否有用户信息
+var userForm = sessionStorage.getItem('user');
 // 密码框切换
 var eye = document.querySelector("#eye");
 var pwd = document.querySelector("#inputPassword");
 var flag = 0;
-eye.onclick = function pwdChange() {
+pwdChange();
+$(eye).on('click', pwdChange);
+
+function pwdChange() {
     if (flag == 0) {
         pwd.type = 'text';
-        eye.src = '../img/open.png';
+        eye.src = 'img/open.png';
         flag = 1;
     } else {
         pwd.type = 'password';
-        eye.src = '../img/close.png';
+        eye.src = 'img/close.png';
         flag = 0;
     }
 };
@@ -81,6 +86,7 @@ $('#enroll-pwd').on('blur', function() {
 $(".btn-default-admin-login").on("click", function() {
     var inputTel = $("#inputTel").val();
     var inputPassword = $("#inputPassword").val();
+
     //非空验证
     if (inputTel.trim().length == 0) {
         alert("请输入手机号");
@@ -94,24 +100,22 @@ $(".btn-default-admin-login").on("click", function() {
         type: 'post',
         url: 'adminLoginServlet',
         data: {
-            "username": $("#inputTel").val(),
-            "pwd": $("#inputPassword").val()
+            "username": inputTel,
+            "pwd": inputPassword
         },
-        success: function(response) {
-            if (response) {
+        success: function() {
+            if (userForm) {
                 //登录成功跳到管理员界面
-                Location.href = '../html/';
-            }
-        },
-        error: function() {
-            Location.href = '../html/';
-            alert('手机号或密码错误');
+                Location.href = 'admin-viewresume.html';
+            } else alert('手机号或密码错误');
         },
         dataType: 'json'
     });
     //阻止表单的默认提交行为
     return false;
 });
+
+
 //用户登陆
 $(".btn-default-user-login").on("click", function() {
     var inputTel = $("#user-tel").val();
@@ -134,32 +138,36 @@ $(".btn-default-user-login").on("click", function() {
         type: 'post',
         url: 'LoginServlet',
         data: {
-            "username": $("#user-tel").val(),
-            "pwd": $("#userPassword").val(),
-            "chkCode": $("#chkCode").val()
+            "username": inputTel,
+            "pwd": userPassword,
+            "checkcode": chkCode
         },
         success: function(response) {
             if (response) { //登录成功跳到个人界面
-                Location.href = '../html/管理员-查看简历.html';
+                Location.href = '';
             } else {
-                alert('手机号或验证码错误');
+                alert('手机号或密码或验证码错误');
             }
         },
         error: function() {
-            alert('错误');
+            alert('发生未知错误');
         },
         dataType: 'json'
     });
     //阻止表单的默认提交行为
     return false;
 });
+
 //切换验证码
 $("#checkCode").on('click', function() {
-    var data = +new Data();
-    $(this).attr('src', 'CheckCodeServlet' + data);
+    var dateTemp = +new Date();
+    $(this).attr('src', 'CheckCodeServlet' + dateTemp);
 });
+
 //用户注册
 $('.form-horizontal-enroll').on('submit', function() {
+    //将个人资料value放入隐藏输入框
+    $("#enroll-info-input").val() = $("#enroll-info-textarea").val();
     //获取到用户在表单中输入的数据并将内容格式化成参数字符串
     var formData = $(this).serialize();
     //向服务器端发送添加用户的请求
@@ -170,11 +178,11 @@ $('.form-horizontal-enroll').on('submit', function() {
         success: function(response) {
             if (response) {
                 //跳到个人界面
-                location.href = "../html/";
-            }
+                location.href = "person.html";
+            } else alert('注册失败');
         },
         error: function() {
-            alert('注册失败');
+            alert('发生未知错误');
         },
         dataType: 'json'
     });
@@ -265,7 +273,6 @@ $('#tel').on('blur', function() {
             }
         },
         error: function() {
-
             $(".tel_registered").css('display', 'block')
             $(".btn-default").attr('disabled', true);
         },

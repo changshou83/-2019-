@@ -21,7 +21,7 @@
       <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="../css/qinli.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
@@ -40,7 +40,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <img src="../img/琴理图标.png" alt="" class="qinLiIcon">
+                <img src="img/qinliIcon.png" alt="" class="qinLiIcon">
                 <ul class="nav navbar-nav menu">
                     <li><a href="#">个人简历</a></li>
                     <li><a href="#">最近修改</a></li>
@@ -50,7 +50,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <img src="../img/yuan.png" class="dropdown-toggle heads" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img src="img/uesrimg.png" class="dropdown-toggle heads" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     </li>
                 </ul>
             </div>
@@ -86,7 +86,7 @@
                                     <input type="text" class="form-control" id="chkCode" placeholder="请输入验证码" name="chkcode">
                                 </div>
                                 <div class="col-sm-3">
-                                    <img src="CheckCodeServlet" alt="" name="checkcode">
+                                    <img src="CheckCodeServlet" alt="" name="checkcode" id="checkcode">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -113,7 +113,7 @@
                         <form class="form-horizontal form-horizontal-admin" action="adminLoginServlet" method="post">
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    <input type="text" class="form-control common" id="inputTel" placeholder="请输入手机号/账号" name="tel">
+                                    <input type="text" class="form-control common" id="inputTel" placeholder="请输入手机号" name="tel">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -121,7 +121,7 @@
                                     <input type="password" class="form-control " id="inputPassword" placeholder="请输入密码" name="pwd">
                                 </div>
                                 <div class="col-sm-1" style="padding:0;">
-                                    <img src="../img/close.png" alt="" class="img-responsive img-rounded" id="eye" style="height: 3vw; padding:0;">
+                                    <img src="img/close.png" alt="" class="img-responsive img-rounded" id="eye" style="height: 3vw; padding:0;">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -261,7 +261,8 @@
                                     <div class="form-group">
                                         <label for="inputEmail3" class="col-sm-2 control-label">个人资料:</label>
                                         <div class="col-sm-10">
-                                            <textarea name="" id="" cols="59" rows="8" style="background-color: #b3b5b6;" name="info"></textarea>
+                                            <textarea name="" id="enroll-info-textarea" cols="59" rows="8" style="background-color: #b3b5b6;"></textarea>
+                                            <input type="text" id="enroll-info-input" style="display: none;" name="info">
                                         </div>
                                     </div>
                                 </div>
@@ -298,7 +299,7 @@
             </div>
         </div>
     </div>
-    <script src="../js/kaohe.js"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>
