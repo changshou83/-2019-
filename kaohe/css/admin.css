@@ -98,6 +98,7 @@ body {
 
 .test img {
     height: 175px;
+    width: 138px;
 }
 
 .test td {
@@ -117,4 +118,9 @@ body {
     display: flex;
     justify-content: flex-end;
     padding-right: 1vw;
+}
+
+.canChange {
+    /* 双击禁止选定文字 */
+    user-select: none;
 }

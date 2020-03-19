@@ -1,6 +1,4 @@
-//检查session中是否有用户信息
-var userForm = sessionStorage.getItem('user');
-// 密码框切换
+//密码框切换
 var eye = document.querySelector("#eye");
 var pwd = document.querySelector("#inputPassword");
 var flag = 0;
@@ -9,12 +7,12 @@ $(eye).on('click', pwdChange);
 
 function pwdChange() {
     if (flag == 0) {
-        pwd.type = 'text';
-        eye.src = 'img/open.png';
-        flag = 1;
-    } else {
         pwd.type = 'password';
         eye.src = 'img/close.png';
+        flag = 1;
+    } else {
+        pwd.type = 'text';
+        eye.src = 'img/open.png';
         flag = 0;
     }
 };
@@ -88,11 +86,11 @@ $(".btn-default-admin-login").on("click", function() {
     var inputPassword = $("#inputPassword").val();
 
     //非空验证
-    if (inputTel.trim().length == 0) {
+    if (inputTel.length == 0) {
         alert("请输入手机号");
         return false;
     }
-    if (inputPassword.trim().length == 0) {
+    if (inputPassword.length == 0) {
         alert("请输入密码");
         return false;
     }
@@ -100,13 +98,13 @@ $(".btn-default-admin-login").on("click", function() {
         type: 'post',
         url: 'adminLoginServlet',
         data: {
-            "username": inputTel,
+            "tel": inputTel,
             "pwd": inputPassword
         },
-        success: function() {
-            if (userForm) {
+        success: function(response) {
+            if (response.OperationSuccess) {
                 //登录成功跳到管理员界面
-                Location.href = 'admin-viewresume.html';
+                location.href = 'admin-viewresume.html';
             } else alert('手机号或密码错误');
         },
         dataType: 'json'
@@ -122,15 +120,15 @@ $(".btn-default-user-login").on("click", function() {
     var userPassword = $("#userPassword").val();
     var chkCode = $("#chkCode").val();
     //非空验证
-    if (inputTel.trim().length == 0) {
+    if (inputTel.length == 0) {
         alert("请输入手机号");
         return false;
     }
-    if (userPassword.trim().length == 0) {
+    if (userPassword.length == 0) {
         alert("请输入密码");
         return false;
     }
-    if (chkCode.trim().length == 0) {
+    if (chkCode.length == 0) {
         alert("请输入验证码");
         return false;
     }
@@ -138,13 +136,13 @@ $(".btn-default-user-login").on("click", function() {
         type: 'post',
         url: 'LoginServlet',
         data: {
-            "username": inputTel,
+            "tel": inputTel,
             "pwd": userPassword,
             "checkcode": chkCode
         },
         success: function(response) {
-            if (response) { //登录成功跳到个人界面
-                Location.href = '';
+            if (response.OperationSuccess) { //登录成功跳到个人界面
+                location.href = 'person.html';
             } else {
                 alert('手机号或密码或验证码错误');
             }
@@ -159,24 +157,33 @@ $(".btn-default-user-login").on("click", function() {
 });
 
 //切换验证码
-$("#checkCode").on('click', function() {
+$("#checkcode").on('click', function() {
     var dateTemp = +new Date();
-    $(this).attr('src', 'CheckCodeServlet' + dateTemp);
+    $(this).attr('src', "" + 'CheckCodeServlet' + dateTemp + "");
 });
 
 //用户注册
 $('.form-horizontal-enroll').on('submit', function() {
-    //将个人资料value放入隐藏输入框
-    $("#enroll-info-input").val() = $("#enroll-info-textarea").val();
-    //获取到用户在表单中输入的数据并将内容格式化成参数字符串
-    var formData = $(this).serialize();
+    var username = $('#username').val();
+    var id = $('#student_number').val();
+    var qq = $('#qq').val();
+    var tel = $('#tel').val();
+    var pwd = $('#enroll-pwd').val();
+    var info = $('#enroll-info').val();
     //向服务器端发送添加用户的请求
     $.ajax({
         type: 'post',
         url: 'RegisterServlet',
-        data: formData,
+        data: {
+            "username": username,
+            "id": id,
+            "qq": qq,
+            "tel": tel,
+            "pwd": pwd,
+            "info": info
+        },
         success: function(response) {
-            if (response) {
+            if (response.OperationSuccess) {
                 //跳到个人界面
                 location.href = "person.html";
             } else alert('注册失败');
@@ -193,7 +200,7 @@ $('.form-horizontal-enroll').on('submit', function() {
 var flag = [false, false, false, false, false, false, false, false];
 $("#username").on("blur", function usernameBlankCheck() {
     var username = $("#username").val();
-    if (username.trim().length == 0) {
+    if (username.length == 0) {
         $(".username_blank").css('display', 'block')
         flag[0] = false;
     } else {
@@ -204,7 +211,7 @@ $("#username").on("blur", function usernameBlankCheck() {
 });
 $("#student_number").on("blur", function studentBlankCheck() {
     var student_number = $("#student_number").val();
-    if (student_number.trim().length == 0) {
+    if (student_number.length == 0) {
         $(".student_number_blank").css('display', 'block')
         flag[1] = false;
     } else {
@@ -215,7 +222,7 @@ $("#student_number").on("blur", function studentBlankCheck() {
 });
 $("#tel").on("blur", function telBlankCheck() {
     var tel = $("#tel").val();
-    if (tel.trim().length == 0) {
+    if (tel.length == 0) {
         $(".tel_blank").css('display', 'block')
         flag[2] = false;
     } else {
@@ -226,7 +233,7 @@ $("#tel").on("blur", function telBlankCheck() {
 });
 $("#enroll-pwd").on("blur", function pwdBlankCheck() {
     var enroll_pwd = $("#enroll-pwd").val();
-    if (enroll_pwd.trim().length == 0) {
+    if (enroll_pwd.length == 0) {
         $(".enroll-pwd_blank").css('display', 'block')
         flag[3] = false;
     } else {
@@ -252,10 +259,10 @@ function disableButton() {
 //检验手机号是否注册过
 $('#tel').on('blur', function() {
     //非空验证
-    if ($(this).trim().length == 0) {
+    if ($(this).length == 0) {
         alert("请输入手机号");
         return;
-    }
+    };
     $.ajax({
         type: 'post',
         url: 'isExistUserServlet',
@@ -264,11 +271,10 @@ $('#tel').on('blur', function() {
         },
         success: function(response) {
             if (!response.isExistUser) {
-                $(".tel_registered").css('display', 'none')
+                $(".tel_registered").css('display', 'none');
                 $(".btn-default").attr('disabled', false);
-                document.enroll.action = "LoginServlet";
             } else {
-                $(".tel_registered").css('display', 'block')
+                $(".tel_registered").css('display', 'block');
                 $(".btn-default").attr('disabled', true);
             }
         },

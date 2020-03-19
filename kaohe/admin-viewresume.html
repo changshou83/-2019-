@@ -43,8 +43,8 @@
                     <li class="dropdown">
                         <img src="img/uesrimg.png" class="dropdown-toggle heads" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <ul class="dropdown-menu dropdown-admin-menu" style="min-width:64px;left: -15px;top: 3.4vw;">
-                            <li><a href="#">编辑</a></li>
-                            <li><a href="#" id="#logout">注销</a></li>
+                            <li><a href="#" id="edit">编辑</a></li>
+                            <li><a href="#" id="logout">注销</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -67,6 +67,50 @@
         <button type="button" class="btn btn-default" style="font-size: 14px;top: 48vh;"><svg class="icon" aria-hidden="true">
             <use xlink:href="#icondaochu"></use>
         </svg><span style="top: -8px;">导出本地</span> </button>
+    </div>
+    <div class="modal fade" id="userFormModal" tabindex="-1" role="dialog" aria-labelledby="userFormModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3" colspan="2" id="user-photo"><img src="" alt="" id="userFormModal-img"></td>
+                            </tr>
+                            <tr>
+                                <td width='40px'>学号:</td>
+                                <td id="user-id" colspan="4">0</td>
+                            </tr>
+                            <tr>
+                                <td width='50px'>用户名:</td>
+                                <td id="user-username" colspan="4" class="canChange">0</td>
+                            </tr>
+                            <tr>
+                                <td width='100px' rowspan="2">联系方式</td>
+                                <td width='30px'>手机</td>
+                                <td id="user-tel" colspan="2" class="canChange">0</td>
+                            </tr>
+                            <tr>
+                                <td width='30px'>QQ</td>
+                                <td id="user-qq" colspan="2" class="canChange">0</td>
+                            </tr>
+                            <tr>
+                                <td width='100px'>密码</td>
+                                <td id="user-pwd" colspan="3" class="canChange">0</td>
+                            </tr>
+                            <tr>
+                                <td width='100px'>个人资料</td>
+                                <td id="user-info" colspan="4" width='500px' class="canChange">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default changeUserForm">
+                    <span style="top: -8px;">修改完毕</span></button>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="showResume">
         <!-- Modal -->
