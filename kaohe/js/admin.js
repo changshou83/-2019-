@@ -8,18 +8,6 @@ $.ajax({
         testCode = response.testCode;
         //渲染用户数据
         $('.heads').attr('src', testCode.userForm.heads);
-        //ajax获取证件照
-        // var imgSrc = [];
-        // for (let i = 0; i < testCode.userData.length; i++) {
-        //     $.ajax({
-        //         type: 'post',
-        //         url: 'PhotoServlet',
-        //         data: { "no": testCode.userData[i].no },
-        //         success: function(response) {
-        //             imgSrc.push(response);
-        //         }
-        //     })
-        // };
         //制造简历
         var showResume = document.querySelector('.showResume');
 
@@ -211,28 +199,44 @@ $.ajax({
         $(".like").on('click', function() {
             //赋予被点击的resume块collect的类名并改变图标
             var likePicture = document.querySelector('.like svg');
-            $.ajax({
-                type: 'post',
-                url: 'CollectServlet',
-                data: {
-                    'num': 1,
-                    'no': testCode.userData[clicked].no
-                },
-                success: function(response) {
-                    if (response.collected) {
-                        if (likePicture.innerHTML == '<use xlink:href="#iconxinaixin"></use>') {
-                            likePicture.innerHTML = '<use xlink:href="#iconcol0"></use>';
+            if ($('' + '.resume' + (clicked + 1) + '').hasClass('collect')) {
+                $.ajax({
+                    type: 'post',
+                    url: 'UncollectServlet',
+                    data: {
+                        'num': 1,
+                        'no': testCode.userData[clicked].no
+                    },
+                    success: function(response) {
+                        if (response.Uncollect) {
+                            likePicture.innerHTML = '<use xlink:href="#iconxinaixin"></use>'; //空心
+                            $('' + '.resume' + (clicked + 1) + '').removeClass('collect');
+                        } else {
+                            alert("啊，朋友，刚才睡着了，请重新操作一次");
+                        }
+                    },
+                    dataType: 'json'
+                })
+            } else {
+                $.ajax({
+                    type: 'post',
+                    url: 'CollectServlet',
+                    data: {
+                        'num': 1,
+                        'no': testCode.userData[clicked].no
+                    },
+                    success: function(response) {
+                        if (response.collected) {
+                            likePicture.innerHTML = '<use xlink:href="#iconcol0"></use>'; //红心
                             $('' + '.resume' + (clicked + 1) + '').addClass('collect');
                         } else {
-                            likePicture.innerHTML = '<use xlink:href="#iconxinaixin"></use>';
-                            $('' + '.resume' + (clicked + 1) + '').removeClass('collect');
+                            alert("啊，朋友，刚才睡着了，请重新操作一次");
                         }
-                    } else {
-                        alert("啊，朋友，刚才睡着了，请重新操作一次");
-                    }
-                },
-                dataType: 'json'
-            })
+                    },
+                    dataType: 'json'
+                })
+            }
+
         });
         //删除功能
         function deleteTest() {
@@ -357,7 +361,7 @@ $.ajax({
         });
     }
 });
-/* 遇见的难题及解决方法
+/* 遇见的难题及解决方法(细节改动，思路不变)
 问题1. 怎样让一个空的模态框(只是数据是空的，大框已经写好了)去显示我想要显示的那个简历的内容呢？此函数为changeModalContent
 解决办法：
  1.首先给每一个class类名为test的div添加一个点击事件监听器(class类名为创建test块时添加进去的)，使其点击时将模态框显示出来。

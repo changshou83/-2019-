@@ -69,17 +69,6 @@ $('#enroll-pwd').on('blur', function() {
         flag[7] = true;
     }
 });
-//将form表单数据拼接成json字符串转换为json对象
-// function serializeObject(obj) {
-//     //处理结果对象
-//     var result = {};
-//     //serializeArray转换为数组
-//     var params = obj.serializeArray();
-//     //.each遍历数组,将数组转换为对象
-//     $.each(params, function(index, value) {
-//         result[value.name] = value.value;
-//     })
-// }
 //管理员登陆
 $(".btn-default-admin-login").on("click", function() {
     var inputTel = $("#inputTel").val();
@@ -159,7 +148,7 @@ $(".btn-default-user-login").on("click", function() {
 //切换验证码
 $("#checkcode").on('click', function() {
     var dateTemp = +new Date();
-    $(this).attr('src', "" + 'CheckCodeServlet' + dateTemp + "");
+    $(this).attr('src', "" + 'CheckCodeServlet?id=' + dateTemp + "");
 });
 
 //用户注册
@@ -286,11 +275,3 @@ $('#tel').on('blur', function() {
         dataType: 'json'
     })
 });
-//获取用户数据(用户界面没弄呢，要套模板)
-// $.ajax({
-//     type: '',
-//     url: '',
-//     success: function(response) {
-
-//     }
-// })
